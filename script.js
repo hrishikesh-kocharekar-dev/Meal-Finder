@@ -9,10 +9,11 @@ function fetchMeal(e) {
 
   // Getting the search term
   const term = search.value;
+  const apiCode = `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`;
 
   // check for empty
   if (term.trim()) {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
+    fetch(apiCode)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
